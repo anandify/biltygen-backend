@@ -20,7 +20,7 @@ public class BiltygenApplication {
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(List.of("http://localhost:5173")); // Allow frontend origin
+		config.setAllowedOrigins(List.of("https://biltygen-frontend.vercel.app")); // Allow frontend origin
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowedHeaders(List.of("*"));
 		config.setAllowCredentials(true);
