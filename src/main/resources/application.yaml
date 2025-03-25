@@ -7,6 +7,13 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 3  # Set a lower max connections
+      minimum-idle: 1        # Keep at least 1 connection open
+      idle-timeout: 10000    # Close idle connections after 10 seconds
+      max-lifetime: 1800000  # Close connections older than 30 minutes
+      connection-timeout: 30000 # Wait up to 30 sec for a connection
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
